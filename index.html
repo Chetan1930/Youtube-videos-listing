@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Listing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <div class="brand">
+                <span class="brand__icon" aria-hidden="true">▶</span>
+                <div class="brand__text">
+                    <h1 class="brand__title">Video catalog</h1>
+                    <p class="brand__tagline">Powered by <a class="link" href="https://api.freeapi.app/api/v1/public/youtube/videos" target="_blank" rel="noopener noreferrer">FreeAPI</a> — no API key required</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="toolbar" aria-label="Results info">
+            <p id="meta-line" class="toolbar__meta" hidden></p>
+        </section>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+
+        <div id="video-container" class="video-grid" aria-busy="true"></div>
+
+        <nav class="pager" id="pager" aria-label="Pagination" hidden>
+            <button type="button" class="btn btn--ghost" id="btn-prev" disabled>Previous</button>
+            <span class="pager__label" id="page-label"></span>
+            <button type="button" class="btn btn--primary" id="btn-next">Next</button>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <p>Thumbnails and metadata belong to their respective creators on YouTube.</p>
+    </footer>
+
+    <script src="logic.js"></script>
+</body>
+</html>
